@@ -11,7 +11,7 @@ RUN mkdir -p /home/foundry/data
 RUN mkdir -p /home/foundry/app
 
 WORKDIR /home/foundry/data
-COPY --chown=$UID /foundrydata/ .
+COPY --chown=$UID /foundry/data/ .
 
 WORKDIR /home/foundry/app
 COPY /foundryvtt/ .
