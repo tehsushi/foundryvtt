@@ -1,4 +1,5 @@
 FROM node:12-alpine
+MAINTAINER fithwum
 
 ENV UID=99
 ENV GUID=100
