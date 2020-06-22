@@ -1,10 +1,11 @@
-FROM node:12-alpine
+FROM alpine:latest
 MAINTAINER fithwum
 
 ENV UID=99
 ENV GUID=100
 
-RUN mkdir -p /foundry \
+RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion node tar \
+	&& mkdir -p /foundry \
 	&& mkdir -p /foundry/fvtt \
 	&& mkdir -p /foundry/data
 
