@@ -13,7 +13,6 @@ echo " "
 sleep 1
 
 mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
-echo " "
 echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
 echo " "
 wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
