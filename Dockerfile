@@ -11,8 +11,8 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 	&& mkdir -p /foundry /ftemp /foundry/fvtt /foundry/data \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
-# ADD "${INSTALL_SCRIPT}" /ftemp
-# RUN chmod +x /ftemp/Install_Script.sh
+ADD "${INSTALL_SCRIPT}" /ftemp
+RUN chmod +x /ftemp/Install_Script.sh
 
 # directory where data is stored
 WORKDIR /foundry
@@ -21,4 +21,4 @@ WORKDIR /foundry
 EXPOSE 30000
 
 # Run command
-CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "/ftemp/Install_Script.sh" , "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
