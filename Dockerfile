@@ -6,7 +6,7 @@ ENV GUID=100
 
 RUN deluser node
 
-RUN adduser -u $UID foundry foundry
+RUN adduser -u $UID -g foundry foundry
 
 USER foundry
 
