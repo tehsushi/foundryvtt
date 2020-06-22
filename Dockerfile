@@ -18,8 +18,9 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 
 USER foundry
 
-ADD "${INSTALL_FILES}" /ftemp
-RUN unzip /ftemp/foundryvtt-0.6.2.zip /ftemp/vtt
+# ADD "${INSTALL_FILES}" /ftemp
+RUN wget --no-cache "${INSTALL_FILES}" -O /ftemp/foundryvtt-0.6.2.zip \
+	&& unzip /ftemp/foundryvtt-0.6.2.zip /ftemp/vtt
 
 # directory where data is stored
 VOLUME /foundry
