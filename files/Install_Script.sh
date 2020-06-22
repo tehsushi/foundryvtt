@@ -15,7 +15,7 @@ sleep 1
 mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
 wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
 sleep 1
-tar -xvf /ftemp/foundryvtt-${FVTT_VERSION}.zip -C /ftemp/fvtt
+unzip -d /ftemp/fvtt/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
 sleep 1
 cp -uR /ftemp/fvtt/. /foundry/fvtt
 rm -fr /ftemp/fvtt
