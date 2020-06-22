@@ -20,12 +20,12 @@ if [ -e "${FVTT_VERSION}" ]
 			echo " "
 			echo "INFO ! Clearing old files."
 			rm -fr /foundry/fvtt-${FVTT_VERSION}
-			mkdir -p /foundry/fvtt-${FVTT_VERSION} /foundry/data /ftemp/fvtt-${FVTT_VERSION}
+			mkdir -p /foundry/fvtt-${FVTT_VERSION} /foundry/data
 			echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
 			echo " "
 			wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
 			sleep 1
-			unzip -d /ftemp/fvtt-${FVTT_VERSION}/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
+			unzip -d /foundry/fvtt-${FVTT_VERSION}/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
 			sleep 1
 			cp -uR /ftemp/fvtt-${FVTT_VERSION}/. /foundry/fvtt-${FVTT_VERSION}
 			rm -fr /ftemp/fvtt-${FVTT_VERSION}
