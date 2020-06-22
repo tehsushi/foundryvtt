@@ -6,9 +6,7 @@ ENV GUID=100
 
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
-	&& mkdir -p /foundry \
-	&& mkdir -p /foundry/fvtt \
-	&& mkdir -p /foundry/data \
+	&& mkdir -p /foundry /foundry/fvtt /foundry/data \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
 
