@@ -4,8 +4,6 @@ MAINTAINER fithwum
 ENV UID=99
 ENV GUID=100
 
-USER node
-
 RUN mkdir -p /foundry/fvtt
 RUN mkdir -p /foundry/data
 
