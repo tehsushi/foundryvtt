@@ -5,7 +5,7 @@ ENV UID=99
 ENV GUID=100
 
 RUN deluser node
-RUN addgroup -g $GUID
+RUN addgroup -g $GUID -S
 RUN adduser -u $UID foundry -G $GUID
 
 USER foundry
