@@ -11,6 +11,7 @@ echo " "
 sleep 1
 
 # Set permissions.
+mkdir -p /foundry/fvtt /foundry/data
 chown 99:100 -R /foundry
 chmod 776 -R /foundry
 chmod +x /foundry/
