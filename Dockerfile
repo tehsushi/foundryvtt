@@ -17,8 +17,8 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 	&& chown 99:100 -R /foundry
 
 # ADD "${INSTALL_FILES}" /ftemp
-RUN wget --no-cache "${INSTALL_FILES}" -O /ftemp/foundryvtt-0.6.2.zip \
-	&& unzip /ftemp/foundryvtt-0.6.2.zip /ftemp/vtt \
+RUN wget --no-cache "${INSTALL_FILES}" -O /ftemp/foundryvtt-${F_VTT_VERSION}.zip \
+	&& unzip /ftemp/foundryvtt-${F_VTT_VERSION}.zip /ftemp/vtt \
 	&& mkdir -p /foundry/fvtt /foundry/data \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
