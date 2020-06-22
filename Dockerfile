@@ -1,6 +1,8 @@
 FROM alpine:latest
 MAINTAINER fithwum
 
+ARG INSTALL_SCRIPT=https://raw.githubusercontent.com/fithwum/foundryvtt/master/files/Install_Script.sh
+
 ENV UID=99
 ENV GUID=100
 
