@@ -3,22 +3,30 @@
 # All rights reserved
 
 # Variables.
+INSTALL_FILES=https://nextcloud.fithwum.tech/index.php/s/35GF6g2ro97Etne/download
+FVTT_VERSION=0.6.2
+
 echo " "
-echo "Server version is ${F_VTT_VERSION}."
-F_VTT_VERSION=0.6.2
+echo "Server version is ${FVTT_VERSION}."
 echo " "
 
 sleep 1
 
+mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
+wget --no-cache "${INSTALL_FILES}" -O /ftemp/foundryvtt-${F_VTT_VERSION}.zip
+unzip /ftemp/foundryvtt-${F_VTT_VERSION}.zip /ftemp/fvtt
+mv -r /ftemp/fvtt /foundry/fvtt
+
+sleep 1
+
 # Set permissions.
-mkdir -p /foundry/fvtt /foundry/data
 chown 99:100 -R /foundry
 chmod 776 -R /foundry
 chmod +x /foundry/
 
 # Run.
 echo " "
-echo "INFO ! Starting FoundryVTT ${F_VTT_VERSION}"
-exec node && fvtt/resources/app/main.js ; --headless ; --dataPath=/foundry/data
+echo "INFO ! Starting FoundryVTT ${FVTT_VERSION}"
+exec node ; /foundry/fvtt/resources/app/main.js ; --headless ; --dataPath=/foundry/data
 
 exit
