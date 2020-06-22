@@ -13,6 +13,9 @@ echo " "
 sleep 1
 
 mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
+echo " "
+echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
+echo " "
 wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
 sleep 1
 unzip -d /ftemp/fvtt/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
@@ -30,7 +33,8 @@ chmod +x /foundry/
 
 # Run.
 echo " "
-echo "INFO ! Starting FoundryVTT ${FVTT_VERSION}"
+echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
+echo " "
 exec node ; /foundry/fvtt/resources/app/main.js ; --headless ; --dataPath=/foundry/data
 
 exit
