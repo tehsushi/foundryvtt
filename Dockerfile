@@ -18,10 +18,10 @@ USER foundry
 
 # directory where data is stored
 VOLUME /foundry
-WORKDIR /foundry
+# WORKDIR /foundry
 
 # TCP Port
 EXPOSE 30000
 
 # Run command
-CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "node", "/foundry/fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
