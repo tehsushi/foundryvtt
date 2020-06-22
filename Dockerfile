@@ -8,7 +8,7 @@ RUN mkdir -p /foundry \
 	&& mkdir -p /foundry/fvtt \
 	&& mkdir -p /foundry/data
 
-WORKDIR /foundry/fvtt
+WORKDIR /foundry
 
 EXPOSE 30000
-CMD [ "node", "resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
