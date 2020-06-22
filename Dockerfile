@@ -7,7 +7,8 @@ ENV PUID=99
 ENV GUID=100
 ENV F_VTT_VERSION=0.6.2
 
-RUN addgroup -S 100 && adduser -S -u 99 -D foundry -G 100
+RUN addgroup -S 100 \
+	&& adduser -S -u 99 -D foundry -G 100
 
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
