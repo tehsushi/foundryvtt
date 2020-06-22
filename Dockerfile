@@ -9,8 +9,7 @@ RUN addgroup -S 100 && adduser -S -u 99 -D foundry -G 100
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
 	&& mkdir -p /foundry /ftemp /ftemp/fvtt /ftemp/data \
-	&& cp /ftemp/data /foundry/data \
-	&& cp /ftemp/fvtt /foundry/fvtt \
+	&& mv /ftemp/* /foundry/ \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
 
