@@ -10,18 +10,27 @@ echo " "
 echo "Server version is ${FVTT_VERSION}."
 echo " "
 
-sleep 1
 
-mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
-echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
-echo " "
-wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
-sleep 1
-unzip -d /ftemp/fvtt/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
-sleep 1
-cp -uR /ftemp/fvtt/. /foundry/fvtt
-rm -fr /ftemp/fvtt
-rm -fr /ftemp/foundryvtt-${FVTT_VERSION}.zip
+if [ -e "${FVTT_VERSION}" ]
+	then
+		echo "INFO ! FoundryVTT is ${FVTT_VERSION} ... No need to reinstall."
+	else
+		echo " "
+		echo "WARNING ! FoundryVTT is out of date ... will Install new copy."
+			echo " "
+			echo "INFO ! Clearing old files."
+			rm -f /foundry/fvtt-${FVTT_VERSION}/*
+			mkdir -p /foundry/fvtt-${FVTT_VERSION} /foundry/data /ftemp/fvtt-${FVTT_VERSION}
+			echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
+			echo " "
+			wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
+			sleep 1
+			unzip -d /ftemp/fvtt-${FVTT_VERSION}/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
+			sleep 1
+			cp -uR /ftemp/fvtt-${FVTT_VERSION}/. /foundry/fvtt-${FVTT_VERSION}
+			rm -fr /ftemp/fvtt-${FVTT_VERSION}
+			rm -fr /ftemp/foundryvtt-${FVTT_VERSION}.zip
+fi
 
 sleep 1
 
@@ -34,6 +43,6 @@ chmod +x /foundry/
 echo " "
 echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
 echo " "
-exec /foundry/fvtt/resources/app/main.js ; --dataPath=/foundry/data
+exec /foundry/fvtt-${FVTT_VERSION}/resources/app/main.js ; --dataPath=/foundry/data
 
 exit
