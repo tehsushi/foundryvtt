@@ -1,15 +1,14 @@
 FROM alpine:latest
 MAINTAINER fithwum
 
-ENV UID=99
+ENV PUID=99
 ENV GUID=100
 
-RUN addgroup -S 100 && adduser -S -u 99 -D foundry -G 100
+RUN addgroup -S 100 foundry && adduser -S -u 99 -D foundry -G 100
 
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
-	&& mkdir -p /foundry /ftemp /ftemp/fvtt /ftemp/data \
-	&& mv /ftemp/* /foundry/ \
+	&& mkdir -p /foundry /ftemp /foundry/fvtt /foundry/data \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
 
