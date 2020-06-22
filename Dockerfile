@@ -19,7 +19,7 @@ ADD "${INSTALL_SCRIPT}" /ftemp
 RUN chmod +x /ftemp/Install_Script.sh \
 	&& chown 99:100 -R /ftemp/Install_Script.sh
 
-USER foundry
+# USER foundry
 
 # directory where data is stored
 VOLUME /foundry
