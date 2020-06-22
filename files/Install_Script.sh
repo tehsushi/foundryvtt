@@ -17,9 +17,9 @@ wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
 sleep 1
 unzip /ftemp/foundryvtt-${FVTT_VERSION}.zip /foundry/fvtt
 sleep 1
-cp -uR /ftemp/fvtt/. /foundry/fvtt
+# cp -uR /ftemp/fvtt/. /foundry/fvtt
+# rm -fr /ftemp/fvtt
 rm -fr /ftemp/foundryvtt-${FVTT_VERSION}.zip
-rm -fr /ftemp/fvtt
 
 sleep 1
 
