@@ -33,6 +33,6 @@ chmod +x /foundry/
 echo " "
 echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
 echo " "
-exec /foundry/fvtt/resources/app/main.js # ; --dataPath=/foundry/data
+exec /foundry/fvtt/resources/app/main.js --dataPath=/foundry/data
 
 exit
