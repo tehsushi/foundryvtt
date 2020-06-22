@@ -11,7 +11,7 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 	&& chown 99:100 -R /foundry
 
 # directory where data is stored
-VOLUME /foundry
+WORKDIR /foundry
 
 # TCP Port
 EXPOSE 30000
