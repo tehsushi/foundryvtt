@@ -12,7 +12,7 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 
 # directory where data is stored
 VOLUME /foundry
-RUN mv /ftemp/fvtt /foundry/fvtt && mv /ftemp/data /foundry/data &&
+RUN mv /ftemp/fvtt /foundry/fvtt && mv /ftemp/data /foundry/data
 
 # TCP Port
 EXPOSE 30000
