@@ -16,6 +16,7 @@ USER foundry
 
 # directory where data is stored
 VOLUME /foundry
+WORKDIR /foundry
 
 # TCP Port
 EXPOSE 30000
