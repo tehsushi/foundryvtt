@@ -5,7 +5,7 @@ ARG INSTALL_FILES=https://nextcloud.fithwum.tech/index.php/s/35GF6g2ro97Etne/dow
 
 ENV PUID=99
 ENV GUID=100
-ENV F_VTT_VERSION=0.6.2
+ENV FVTT_VERSION=0.6.2
 
 RUN addgroup -S 100 \
 	&& adduser -S -u 99 -D foundry -G 100
@@ -17,8 +17,7 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 	&& chown 99:100 -R /foundry
 
 ADD "${INSTALL_FILES}" /ftemp
-
-RUN 
+RUN unzip /ftemp/foundryvtt-0.6.2.zip /ftemp/vtt
 
 USER foundry
 
