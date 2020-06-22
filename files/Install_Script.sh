@@ -45,4 +45,6 @@ echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
 echo " "
 exec node ; /foundry/fvtt-${FVTT_VERSION}/resources/app/main.js ; --dataPath=/foundry/data
 
+sleep 900
+
 exit
