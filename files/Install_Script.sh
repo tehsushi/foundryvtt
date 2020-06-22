@@ -19,7 +19,7 @@ if [ -e "${FVTT_VERSION}" ]
 		echo "WARNING ! FoundryVTT is out of date ... will Install new copy."
 			echo " "
 			echo "INFO ! Clearing old files."
-			rm -f /foundry/fvtt-${FVTT_VERSION}/*
+			rm -fr /foundry/fvtt-${FVTT_VERSION}
 			mkdir -p /foundry/fvtt-${FVTT_VERSION} /foundry/data /ftemp/fvtt-${FVTT_VERSION}
 			echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
 			echo " "
@@ -43,6 +43,6 @@ chmod +x /foundry/
 echo " "
 echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
 echo " "
-exec /foundry/fvtt-${FVTT_VERSION}/resources/app/main.js ; --dataPath=/foundry/data
+exec node ; /foundry/fvtt-${FVTT_VERSION}/resources/app/main.js ; --dataPath=/foundry/data
 
 exit
