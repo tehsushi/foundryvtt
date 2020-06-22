@@ -4,11 +4,7 @@ MAINTAINER fithwum
 ENV UID=99
 ENV GUID=100
 
-RUN deluser node
-
-RUN adduser -u $UID -g foundry foundry
-
-USER foundry
+USER node
 
 RUN mkdir -p /home/foundry/fvtt
 RUN mkdir -p /home/foundry/data
