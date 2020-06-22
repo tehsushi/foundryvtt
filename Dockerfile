@@ -8,21 +8,17 @@ ENV GUID=100
 
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
-	&& mkdir -p /foundry /ftemp \
+	&& mkdir -p /foundry /ftemp /foundry/fvtt /foundry/data \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
-ADD "${INSTALL_SCRIPT}" /ftemp
-RUN chmod +x /ftemp/Install_Script.sh
+# ADD "${INSTALL_SCRIPT}" /ftemp
+# RUN chmod +x /ftemp/Install_Script.sh
 
 # directory where data is stored
 WORKDIR /foundry
-
-RUN mkdir -p /foundry/fvtt /foundry/data \
-	&& chmod 777 -R /foundry \
-	&& chown 99:100 -R /foundry
 
 # TCP Port
 EXPOSE 30000
 
 # Run command
-CMD [ "/ftemp/Install_Script.sh" , "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
