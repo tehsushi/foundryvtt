@@ -4,8 +4,9 @@ MAINTAINER fithwum
 ENV UID=99
 ENV GUID=100
 
-RUN mkdir -p /foundry/fvtt
-RUN mkdir -p /foundry/data
+RUN mkdir -p /foundry \
+	&& mkdir -p /foundry/fvtt \
+	&& mkdir -p /foundry/data
 
 WORKDIR /foundry/fvtt
 
