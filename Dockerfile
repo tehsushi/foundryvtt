@@ -21,4 +21,4 @@ RUN mkdir -p /foundry/fvtt /foundry/data \
 EXPOSE 30000
 
 # Run command
-CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "/ts3temp/Install_Script.sh" , "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
