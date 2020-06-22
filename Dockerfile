@@ -16,7 +16,8 @@ RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-comp
 	&& chown 99:100 -R /foundry
 
 ADD "${INSTALL_SCRIPT}" /ftemp
-RUN chmod +x /ftemp/Install_Script.sh
+RUN chmod +x /ftemp/Install_Script.sh \
+	&& chown 99:100 -R /ftemp/Install_Script.sh
 
 USER foundry
 
