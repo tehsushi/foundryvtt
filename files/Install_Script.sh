@@ -13,8 +13,10 @@ echo " "
 sleep 1
 
 mkdir -p /foundry/fvtt /foundry/data /ftemp/fvtt
-wget --no-cache "${INSTALL_FILES}" -O /ftemp/foundryvtt-${F_VTT_VERSION}.zip
+wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${F_VTT_VERSION}.zip
+sleep 1
 unzip /ftemp/foundryvtt-${F_VTT_VERSION}.zip /ftemp/fvtt
+sleep 1
 mv -r /ftemp/fvtt /foundry/fvtt
 
 sleep 1
