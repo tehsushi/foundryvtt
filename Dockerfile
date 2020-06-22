@@ -4,7 +4,7 @@ MAINTAINER fithwum
 ENV UID=99
 ENV GUID=100
 
-RUN useradd -ms /bin/bash foundry
+RUN useradd -ms /bin/bash -g 100 -G sudo -u 99 foundry
 
 # Install dependencies and folder creation
 RUN apk update && apk add --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
