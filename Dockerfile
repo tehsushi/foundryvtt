@@ -1,8 +1,6 @@
 FROM alpine:latest
 MAINTAINER fithwum
 
-ARG INSTALL_SCRIPT=https://raw.githubusercontent.com/fithwum/foundryvtt/master/files/Install_Script.sh
-
 ENV UID=99
 ENV GUID=100
 
@@ -19,4 +17,4 @@ VOLUME /foundry
 EXPOSE 30000
 
 # Run command
-CMD [ "/ftemp/Install_Script.sh" , "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
+CMD [ "node", "fvtt/resources/app/main.js", "--headless", "--dataPath=/foundry/data" ]
