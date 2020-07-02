@@ -11,15 +11,6 @@ echo "Server version is ${FVTT_VERSION}."
 echo " "
 
 mkdir -p /foundry/fvtt /foundry/data
-#echo "Downloading and installing FoundryVTT-${FVTT_VERSION}."
-#echo " "
-#wget --no-cache ${INSTALL_FILES} -O /ftemp/foundryvtt-${FVTT_VERSION}.zip
-#sleep 1
-#unzip -d /foundry/fvtt/ /ftemp/foundryvtt-${FVTT_VERSION}.zip
-#sleep 1
-#cp -uR /ftemp/fvtt/. /foundry/fvtt
-#rm -fr /ftemp/fvtt
-#rm -fr /ftemp/foundryvtt-${FVTT_VERSION}.zip
 
 sleep 1
 
