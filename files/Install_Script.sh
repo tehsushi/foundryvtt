@@ -3,7 +3,7 @@
 # All rights reserved
 
 # Variables.
-FVTT_VERSION=0.6.2
+FVTT_VERSION=0.6.5
 
 echo " "
 echo "Server version is ${FVTT_VERSION}."
