@@ -77,7 +77,7 @@ Connect to the server using the host IP address and port 30000 once connected it
   <Labels/>
   <Config Name="Host Port 1" Target="30000" Default="30000" Mode="tcp" Description="Container Port: 30000" Type="Port" Display="always" Required="true" Mask="false">30000</Config>
   <Config Name="Data Path" Target="/foundry/data" Default="" Mode="rw" Description="Container Path: /foundry/data" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="AppData Config Path" Target="/foundry/fvtt" Default="/mnt/user/appdata/FoundryVTT" Mode="rw" Description="Container Path: /foundry/fvtt" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/FoundryVTT</Config>
   <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
   <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/foundry/fvtt" Default="/mnt/user/appdata/FoundryVTT" Mode="rw" Description="Container Path: /foundry/fvtt" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/FoundryVTT</Config>
 </Container>
