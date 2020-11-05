@@ -3,10 +3,10 @@
 # All rights reserved
 
 # Variables.
-FVTT_VERSION=0.6.5
+FVTT_VERSION=0.7.5
 
 echo " "
-echo "Server version is ${FVTT_VERSION}."
+echo "Current FoundryVTT Release version is ${FVTT_VERSION}."
 
 sleep 1
 
@@ -17,7 +17,7 @@ chmod 776 -R /foundry
 chmod +x /foundry/
 
 # Run.
-echo "INFO ! Starting FoundryVTT-${FVTT_VERSION}"
+echo "INFO ! Starting FoundryVTT Server"
 echo " "
 exec node /foundry/fvtt/resources/app/main.js --dataPath=/foundry/data
 
