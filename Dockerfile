@@ -10,7 +10,7 @@ ENV GUID=100
 #	&& adduser -S -u 99 -D foundry -G 100
 
 # Install dependencies and folder creation
-RUN apt-get -y update && apt-get -y --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
+RUN apt-get -y update && apt-get -y ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
 	&& mkdir -p /foundry /ftemp \
 	&& chmod 777 -R /foundry \
 	&& chown 99:100 -R /foundry
