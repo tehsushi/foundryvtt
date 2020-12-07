@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM fithwum/debian-base:stretch
 MAINTAINER fithwum
 
 ARG INSTALL_SCRIPT=https://raw.githubusercontent.com/fithwum/foundryvtt/master/files/Install_Script.sh
