@@ -6,8 +6,8 @@ ARG INSTALL_SCRIPT=https://raw.githubusercontent.com/fithwum/foundryvtt/master/f
 ENV PUID=99
 ENV GUID=100
 
-RUN addgroup -S 100 \
-	&& adduser -S -u 99 -D foundry -G 100
+# RUN addgroup -S 100 \
+#	&& adduser -S -u 99 -D foundry -G 100
 
 # Install dependencies and folder creation
 RUN apt-get -y update && apt-get -y --no-cache ca-certificates libstdc++ su-exec bash-completion tar nodejs npm \
