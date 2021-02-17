@@ -3,7 +3,7 @@
 # All rights reserved
 
 # Variables.
-FVTT_VERSION=0.7.5
+FVTT_VERSION=0.7.9
 
 echo " "
 echo "Current FoundryVTT Release version is ${FVTT_VERSION}."
