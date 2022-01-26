@@ -27,7 +27,7 @@ RUN chmod +x /ftemp/Install_Script.sh \
 VOLUME /foundry
 
 # TCP Port
-EXPOSE 30000
+EXPOSE 30001
 
 # Run command
 CMD [ "/bin/sh", "/ftemp/Install_Script.sh" ]
